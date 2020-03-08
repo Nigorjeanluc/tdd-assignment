@@ -4,7 +4,8 @@
   "description": "Demostration of different kinds of TDD implementation on this project(Unit Tests, Integration Tests, System Tests, End to End Tests and Acceptance Tests)",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && npm run createtables && node --require @babel/polyfill dist/",
+    "start": "npm run build && node --require babel-polyfill dist/",
+    "build": "babel server -d dist",
     "dev": "nodemon --exec @babel-node ./server/",
     "test": "cross-env NODE_ENV=test nyc --reporter=text --reporter=lcov mocha --require @babel/register --require babel-polyfill ./server/tests/*.test.js --exit"
   },
